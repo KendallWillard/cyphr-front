@@ -1,0 +1,17 @@
+nav a {
+    cursor: pointer;
+}
+
+ #cyphr-container {
+    cursor: pointer;
+}
+
+#cyphr-image {
+    height: 100%;
+}
+
+#file-container {
+    max-width: 60vw;
+    cursor: pointer; /* this doens't work for some reason */
+}
+

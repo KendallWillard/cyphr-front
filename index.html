@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!--This is the beginning of the nav-bar html-->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-info">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">CyphrList</a>
+    
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" id="home-button">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="new-cyphr-button">New Cyphr</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="login-logout-button">Login/Logout</a>
+        </li>
+        <li class="nav-item">
+           <a class="nav-link" id="new-user-button">New User</a>
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+        <input id="search-button" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button  class="btn btn-outline-warning" type="submit">Go</button>
+        </form>
+    </div>
+</nav>
+<!--This is the end of the navbar html-->
+
+
+<div id="profile-container" style="display: none;" class="container mt-4">
+<!--This is the beginning of the profile section-->
+<div class="row">
+<div class="card border-left-0 border-bottom-0 border-top-0 mb-3" style="max-width: 540px;">
+    <div class="row">
+        <div class="col-md-4">
+        <img src="https://lh3.googleusercontent.com/EPN35XZEe58Y7X_GELtny-2YJRCnAitf0guwS8Dv8EAvphlIQ4uib0Wrcf_hfZ3behK1kU3HPEdD44vgK5kclNfHDD5fXRhWR4lymLVpnZTIZJQ39Lfe7ZfSOevlFlGm9FmbBM0feQ9VK8KVdQ3nOSbEaCRKP2kSgQW9jCAYWexDxWlJ9kgeGAln0PFdiLAfZRk1YA7pz_WmK0wtV2F3Mnu9ws4lf70zMtGQPG5jXJxCjq1x3wdidQPKfeShBkVr9Dd4VAMLJld0pHw1GDyxy5ZrfRI64Byzb-WGRj_fQKiz992CW4iilDWhVuia_OLF_jGEsxR2pqDfjrXPkefXS4XW4woeVGG2O_y4cXbiYwjdcgTxJZTmM1Nfdx7ToiTqVAHtX2C6WpraT6YoYoUWx0mI2RTjYp61JUGa3biEojbPSdcFfgNR_Nl6qL7y7TbhOY2d7EfMCuTwf2cUAXcMkE_PprD0jRkeeI2e5CD4yEvp71gKj4ZmwqAqrszZHeHqf6a5cWJTMVgKoqF5D1Sg_SCh9FbHNz2Q06wpw_IHVcICBGGjBekN1dZJAeZCz0VV7w4NcE2xo3oH6U7_UoQlY5gzJuOmP9uIgS6s9mKMkKRqb4ENfYuF93SMm8vOgSSmSP3VTZTWrp3Z1_YFr2WKS_GAp1qR0A=w750-h1334-no" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+        <div class="card-body">
+            <h5 class="card-title">Kooper</h5>
+            <p class="card-text"></p>
+            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        </div>
+       </div>
+    </div>
+</div>
+<div class="card border-0 mb-3" style="width: 18rem;">
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center border-0" id="cyphr-0">
+          </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center border-0" id="cyphr-1">
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center border-0" id="cyphr-2">
+        </li>
+      </ul>
+</div>
+<div class="card border-0 mb-3" style="width: 18rem;">
+      <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center border-0" id="cyphr-3">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center border-0" id="cyphr-4">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center border-0" id="cyphr-5">
+          </li>
+        </ul>
+  </div>
+</div>
+<!--This is the end of the container for the profile-->
+
+<!-- This is the beginning of the container for a cyphr to display-->
+<div id="cyphr-display-container">
+  <div class="row">
+      <div class="offset-md-3 col-12 col-md-8">
+          <div class="card mb-3 card text-white bg-success mb-3" id="cyphr-container" style="max-width: 540px;">
+              <div class="row no-gutters">
+                  <div class="col-md-4" >
+                      <img src="http://bit.ly/2J4IgSZ" id="cyphr-image" class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title">Cyphr Text</h5>
+                          <p class="card-text">For sale is the worlds greatest technology to ever come into existance. Want to know what it is?? Click here!!</p>
+                          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> <!--This is the end of the cyphr-display coontainer-->
+</div> <!--div used for the profile container-->
+
+
+<!--This is the start for CREATING a USER form-->
+<form id="create-user-form" class="container mt-4" style="display: none">
+    <h2>New User</h2>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">First name</label>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Last name</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefaultUsername">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+              </div>
+              <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault03">Address</label>
+            <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault03">City</label>
+            <input type="text" class="form-control" id="validationDefault04" placeholder="City" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault04">State</label>
+            <input type="text" class="form-control" id="validationDefault05" placeholder="State" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault05">Zip</label>
+            <input type="text" class="form-control" id="validationDefault06" placeholder="Zip" required>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault07">Email</label>
+                <input type="text" class="form-control" id="validationDefault07" placeholder="Email" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault08">Phone Number</label>
+                <input type="text" class="form-control" id="validationDefault08" placeholder="Phone Number" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault09">Profile Picture</label>
+                <input type="text" class="form-control" id="validationDefault09" placeholder="Image Url" required>
+            </div>
+        </div>
+       
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to terms and conditions
+            </label>
+          </div>
+        </div>
+        <button id="create-user-button" class="btn btn-primary" type="submit">Create User</button>
+</form>
+<!--This is the END of CREATING a USER form-->
+
+<!--This is the START for CREATING a CYPHR form-->
+<form id="create-cyphr-form" class="container mt-4" style="display: none">
+  <h2>New Cyphr</h2>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault10">Title</label>
+          <input type="text" class="form-control" id="validationDefault10" placeholder="Title" required>
+        </div>
+        <div class="form-group col-md-5 mb-3">
+          <label for="cyphr-description">Description</label>
+          <textarea class="form-control" id="cyphr-description" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-3 mb-3">
+            <label for="validationDefault07">Email</label>
+            <input type="text" class="form-control" id="validationDefault11" placeholder="Fake_Mail@fakeblock.com" required>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationDefault08">Phone Number</label>
+            <input type="text" class="form-control" id="validationDefault12" placeholder="(555) 555-5555" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationDefault11">Location</label>
+          <input type="text" class="form-control" id="validationDefault13" placeholder="Denver, Co" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="validationDefault12">Tags (please seperate by comma)</label>
+          <input type="text" class="form-control" id="validationDefault14" placeholder="guitar, electric, fender, stratocaster, etc..." required>
+        </div>
+      </div>
+      <div class="form-row">
+          <div class="col-md-3 mb-3">
+              <label for="validationDefault09">Image Url</label>
+              <input type="text" class="form-control" id="validationDefault15" placeholder="Image Url" required>
+          </div>
+      </div>
+      <div class="form-row">
+          <div class="col-md-3 mb-3">
+              <label for="price-validation">Price</label>
+              <input type="text" class="form-control" id="price-validation" placeholder="example: 70000" required>
+          </div>
+      </div>
+     
+      <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="">
+            <label class="form-check-label" for="exampleRadios1">
+              For Sale
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="">
+            <label class="form-check-label" for="exampleRadios2">
+              Looking to Buy
+            </label>
+          </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+          <label class="form-check-label" for="invalidCheck2">
+            Agree to terms and conditions
+          </label>
+        </div>
+      </div>
+      <button id="create-cyphr-button" class="btn btn-primary" type="submit">Create Cyphr</button>
+</form>
+<!--This is the END of CREATING a CYPHR form-->
+
+
+<!--This is the START of the cyphr display page section-->
+<div id="cyphr-show-page" style="display: none;" class="container mt-4">
+  <div class="row">
+    <div class="card border-left-0 border-bottom-0 border-top-0 mb-3" style="max-width: 700px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+            <img src="..." class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+           </div>
+        </div>
+      </div>
+      <div class="card mb-3 border-0" style="width: 24rem;">
+          <ul class="list-group list-group-flush">
+            <li id="expire-cyphr" class="list-group-item">Expires: </li>
+            <li id="price-cyphr" class="list-group-item">Price: </li>
+            <li class="list-group-item"></li>
+            <button id="update-cyphr-button" class="btn btn-primary" type="submit">Update</button>
+            <li class="list-group-item"></li>
+            <button id="delete-cyphr-button" class="btn btn-danger" type="submit">Delete</button>
+
+          </ul>
+        </div>
+    </div> <!--End of the Row div-->
+    <div class="card border-left-0 border-right-0 border-bottom-0 mb-3" style="width: 24rem;">
+        <ul class="list-group list-group-flush">
+          <li id="location-cyphr" class="list-group-item">Location: </li>
+          <li id="email-cyphr" class="list-group-item">Email: </li>
+          <li id="phone-cyphr" class="list-group-item">Phone: </li>
+        </ul>
+      </div>
+</div>
+<!--This is the end of cyphr display page section-->
+
+
+<!--This is the beginning of logging in as a new user-->
+<form id="user-login-form" class="container mt-4">
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="sr-only" for="username-input">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input type="text" class="form-control" id="username-input" placeholder="Username">
+        </div>
+      </div>
+      <div class="col-auto">
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+          <label class="form-check-label" for="autoSizingCheck">
+            Remember me
+          </label>
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" id="user-login-button" class="btn btn-primary mb-2">Login</button>
+      </div>
+    </div>
+  </form>
+    <!--This is the end of logging in as a new user-->
+
+
+    <!--This is the START for UPDATING a CYPHR form-->
+<form id="update-cyphr-form" class="container mt-4" style="display: none">
+    <h2>Update Cyphr</h2>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault20">Title</label>
+            <input type="text" class="form-control" id="validationDefault20" placeholder="Title" required>
+          </div>
+          <div class="form-group col-md-5 mb-3">
+            <label for="cyphr-description">Description</label>
+            <textarea class="form-control" id="cyphr-update-description" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+              <label for="validationDefault21">Email</label>
+              <input type="text" class="form-control" id="validationDefault21" placeholder="Fake_Mail@fakeblock.com" required>
+          </div>
+          <div class="col-md-3 mb-3">
+              <label for="validationDefault22">Phone Number</label>
+              <input type="text" class="form-control" id="validationDefault22" placeholder="(555) 555-5555" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault23">Location</label>
+            <input type="text" class="form-control" id="validationDefault23" placeholder="Denver, Co" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault24">Tags (please seperate by comma)</label>
+            <input type="text" class="form-control" id="validationDefault24" placeholder="guitar, electric, fender, stratocaster, etc..." required>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault25">Image Url</label>
+                <input type="text" class="form-control" id="validationDefault25" placeholder="Image Url" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="price-update-validation">Price</label>
+                <input type="text" class="form-control" id="price-update-validation" placeholder="example: 70000" required>
+            </div>
+        </div>
+       
+        <div class="form-group">
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="Radios1" value="">
+              <label class="form-check-label" for="exampleRadios1">
+                For Sale
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="Radios2" value="">
+              <label class="form-check-label" for="exampleRadios2">
+                Looking to Buy
+              </label>
+            </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="Check2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to terms and conditions
+            </label>
+          </div>
+        </div>
+        <button id="update-cyphr-button" class="btn btn-primary" type="submit">Update Cyphr</button>
+  </form>
+  <!--This is the END of UPDATING a CYPHR form-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="src/index.js"></script>
+</body>
+</html>
